@@ -25,11 +25,10 @@ export const sourceBuild = (
   const domain = getHostName(url)
   const pageUrl = getPageUrl(url)
   const cdnSourceStripped = stringFormater.formatCdn(pageUrl)
+  const userPath = typeof userId !== "undefined" ? `-${userId}` : ""
   const basePath =
     domain && cdnSourceStripped
-      ? `${domain}/${encodeURIComponent(cdnSourceStripped)}${
-          typeof userId !== "undefined" ? `-${userId}` : ""
-        }`
+      ? `${domain}/${encodeURIComponent(cdnSourceStripped)}${userPath}`
       : null
   const cdnJsPath = basePath ? `${basePath}.js` : ""
   const cdnMinJsPath = basePath ? `${basePath}.min.js` : ""
@@ -38,7 +37,7 @@ export const sourceBuild = (
     url,
     domain,
     pageUrl,
-    cdnSourceStripped,
+    cdnSourceStripped: `${cdnSourceStripped}${userPath}`,
     cdnJsPath,
     cdnMinJsPath
   }
