@@ -6,5 +6,5 @@ interface Source {
     cdnJsPath: string;
     cdnMinJsPath: string;
 }
-export declare const sourceBuild: (urlMap: string) => Source;
+export declare const sourceBuild: (urlMap: string, userId?: string | number | undefined) => Source;
 export {};
