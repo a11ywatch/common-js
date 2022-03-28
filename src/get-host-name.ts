@@ -1,14 +1,17 @@
-/*
- * Copyright (c) A11yWatch, LLC. and its affiliates.
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- **/
+import { URL } from "url";
 
 export function getHostName(url: string) {
-  const hostName = String(url).match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
-  return hostName && hostName.length >= 2 ? hostName[2] : "";
+  try {
+    const { hostname } = new URL(url);
+
+    return hostname;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 }
 
+// TODO: REPLACE FOR URL
 export const getHostAsString = new String(
   `function getHostName(url) {
     var re = new RegExp("//(www[0-9]?.)(.[^/:]+)", "i");
