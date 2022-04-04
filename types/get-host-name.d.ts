@@ -1,2 +1,2 @@
-export declare function getHostName(url: string): string | undefined;
+export declare function getHostName(url: string): string | null;
 export declare const getHostAsString: String;

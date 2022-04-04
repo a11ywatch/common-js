@@ -1,24 +1,33 @@
 import { initUrl } from "./init-url";
-import { getHostName } from "./get-host-name";
-import { getPageUrl } from "./get-page-url";
+import { removeTrailingSlash } from "./get-page-url";
 import { stringFormater } from "./string-formater";
 
 interface Source {
-  url: string;
-  domain: string | null;
-  pageUrl: string;
+  domain: string | null; // hostname of page
+  pageUrl: string; // url of the page
   cdnSourceStripped: string;
   cdnJsPath: string;
   cdnMinJsPath: string;
+  pathname: string; // pathname of url
 }
 
 export const sourceBuild = (
   urlMap: string,
   userId?: string | number
 ): Source => {
-  const url = initUrl(urlMap || "");
-  const domain = getHostName(url);
-  const pageUrl = getPageUrl(url);
+  const pageUrl = removeTrailingSlash(initUrl(urlMap || ""));
+
+  let domain;
+  let pathname;
+
+  try {
+    const urlObject = new URL(pageUrl);
+    domain = urlObject.hostname;
+    pathname = urlObject.pathname;
+  } catch (e) {
+    console.error(e);
+  }
+
   const cdnSourceStripped = stringFormater.formatCdn(pageUrl);
   const userPath = typeof userId !== "undefined" ? `-${userId}` : "";
   const basePath =
@@ -29,11 +38,11 @@ export const sourceBuild = (
   const cdnMinJsPath = basePath ? `${basePath}.min.js` : "";
 
   return {
-    url,
     domain,
-    pageUrl,
     cdnSourceStripped: `${cdnSourceStripped}${userPath}`,
     cdnJsPath,
     cdnMinJsPath,
+    pageUrl,
+    pathname,
   };
 };

@@ -1,8 +1,6 @@
-export function getPageUrl(url: string) {
-  if (url?.length) {
-    const lchar = url.length - 1;
-
-    return url[lchar] === "/" ? url.substring(0, lchar) : url;
+export function removeTrailingSlash(url: string) {
+  if (url) {
+    return String(url).replace(/\/+$/, "");
   }
   return "";
 }
