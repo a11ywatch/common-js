@@ -1,6 +1,6 @@
 {
   "name": "@a11ywatch/website-source-builder",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "description": "get valid data properties for a11ywatch websites.",
   "main": "dist/index.js",
   "scripts": {

@@ -1,1 +1,1 @@
-export declare function getPageUrl(url: string): string;
+export declare function removeTrailingSlash(url: string): string;

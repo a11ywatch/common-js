@@ -1,8 +1,25 @@
 import { URL } from "url";
 
+const validTransport = (str) => {
+  if (str.indexOf("http://") === 0 || str.indexOf("https://") === 0) {
+    return true;
+  }
+  return false;
+};
+
 export function getHostName(url: string) {
   try {
-    const { hostname } = new URL(url);
+    let targetUrl = url;
+
+    if (!url) {
+      return "";
+    }
+
+    if (!validTransport(url)) {
+      targetUrl = `https://${url}`;
+    }
+
+    const { hostname } = new URL(targetUrl);
 
     return hostname;
   } catch (e) {
