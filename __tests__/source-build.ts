@@ -5,20 +5,22 @@ describe("Source Builder", () => {
     const url = "www.drake.com";
     const httpUrl = `http://${url}`;
     const data = sourceBuild(httpUrl);
-    const domain = url.replace("www.", "");
 
     expect(data).toEqual({
-      cdnJsPath: `${domain}/www-drake-com-ada-fix.js`,
-      cdnMinJsPath: `${domain}/www-drake-com-ada-fix.min.js`,
+      cdnJsPath: `${url}/www-drake-com-ada-fix.js`,
+      cdnMinJsPath: `${url}/www-drake-com-ada-fix.min.js`,
       cdnSourceStripped: "www-drake-com-ada-fix",
-      domain,
+      domain: url,
       pageUrl: httpUrl,
-      url: httpUrl
+      pathname: "/",
     });
   });
 
   test("runs and returns empty data", () => {
+    jest.spyOn(global.console, "error");
+    console.error = jest.fn();
     const data = sourceBuild("");
+    expect(console.error).toBeCalled();
 
     expect(data).toEqual({
       cdnJsPath: "",
@@ -26,7 +28,7 @@ describe("Source Builder", () => {
       cdnSourceStripped: "",
       domain: "",
       pageUrl: "",
-      url: ""
+      pathname: "",
     });
   });
 });

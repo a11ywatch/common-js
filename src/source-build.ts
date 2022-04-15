@@ -17,8 +17,8 @@ export const sourceBuild = (
 ): Source => {
   const pageUrl = removeTrailingSlash(initUrl(urlMap || ""));
 
-  let domain;
-  let pathname;
+  let domain = "";
+  let pathname = "";
 
   try {
     const urlObject = new URL(pageUrl);
