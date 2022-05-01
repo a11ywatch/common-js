@@ -1,6 +1,8 @@
 # @a11ywatch/website-source-builder
 
-get pieces of data from a url
+This package is used throughout the A11yWatch eco system as re-usable utils.
+The purpose of this lib is to handle custom edge cases that are required for the system and found being used through
+out the system like converters and data handling functions.
 
 ## Installation
 

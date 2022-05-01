@@ -1,11 +1,11 @@
 {
   "name": "@a11ywatch/website-source-builder",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "description": "get valid data properties for a11ywatch websites.",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "prepare": "tsc && cp types/index.d.ts dist/index.d.ts"
+    "prepare": "tsc"
   },
   "keywords": [
     "a11ywatch",

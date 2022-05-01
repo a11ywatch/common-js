@@ -8,13 +8,10 @@
     "sourceMap": true,
     "outDir": "dist/",
     "declaration": true,
-    "declarationDir": "./types",
     "strict": true,
     "esModuleInterop": true,
     "paths": {
-      "@app/*": [
-        "./src/*"
-      ]
+      "@app/*": ["./src/*"]
     }
   },
   "include": ["src/*"],
