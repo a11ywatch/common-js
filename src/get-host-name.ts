@@ -8,11 +8,11 @@ const validTransport = (str) => {
 };
 
 export function getHostName(url: string) {
+  if (!url) {
+    return "";
+  }
   try {
     let targetUrl = url;
-    if (!url) {
-      return "";
-    }
     if (!validTransport(url)) {
       targetUrl = `https://${url}`;
     }
