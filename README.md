@@ -10,14 +10,14 @@ The purpose of this lib is to handle custom edge cases that are required for the
 ```typescript
 const { sourceBuild } = require("@a11ywatch/website-source-builder");
 
-const data = sourceBuild("http://www.a11ywatch.com");
+const data = sourceBuild("http://a11ywatch.com");
 
 //  output {
 //       cdnJsPath: `a11ywatch.com/www-a11ywatch-com-ada-fix.js`,
 //       cdnMinJsPath: `a11ywatch.com/www-a11ywatch-com-ada-fix.min.js`,
 //       cdnSourceStripped: "www-a11ywatch-com-ada-fix",
 //       domain: "a11ywatch.com",
-//       pageUrl: "http://www.a11ywatch.com",
-//       url: "http://www.a11ywatch.com"
+//       pageUrl: "http://a11ywatch.com",
+//       url: "http://a11ywatch.com"
 //     }
 ```
