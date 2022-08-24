@@ -11,12 +11,15 @@ export function getHostName(url: string) {
   if (!url) {
     return "";
   }
+  let targetUrl = url;
+
+  if (!validTransport(url)) {
+    targetUrl = `https://${url}`;
+  }
+
   try {
-    let targetUrl = url;
-    if (!validTransport(url)) {
-      targetUrl = `https://${url}`;
-    }
     const { hostname } = new URL(targetUrl);
+
     return hostname;
   } catch (e) {
     console.error(e);
