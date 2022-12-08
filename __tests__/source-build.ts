@@ -17,10 +17,7 @@ describe("Source Builder", () => {
   });
 
   test("runs and returns empty data", () => {
-    jest.spyOn(global.console, "error");
-    console.error = jest.fn();
     const data = sourceBuild("");
-    expect(console.error).toBeCalled();
 
     expect(data).toEqual({
       cdnJsPath: "",

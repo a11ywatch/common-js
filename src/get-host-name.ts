@@ -23,27 +23,25 @@ export function getHostName(url: string) {
     return hostname;
   } catch (e) {
     console.error(e);
-    return null;
+    return "";
   }
 }
 
 // TODO: REPLACE FOR URL
 export const getHostAsString = new String(
-  `
-    function getHostName(url) {
-      if (url) {
-        try {
-          let targetUrl = url;
-          if (!(url.indexOf("http://") === 0 || url.indexOf("https://") === 0)) {
-            targetUrl = "https://" + targetUrl;
-          }
-          const { hostname } = new URL(targetUrl);
-          return hostname;
-        } catch (e) {
-          console.error(e);
-          return null;
+  `function getHostName(url) {
+    if (url) {
+      try {
+        let targetUrl = url;
+        if (!(url.indexOf("http://") === 0 || url.indexOf("https://") === 0)) {
+          targetUrl = "https://" + targetUrl;
         }
+        const { hostname } = new URL(targetUrl);
+        return hostname;
+      } catch (e) {
+        console.error(e);
+        return null;
       }
     }
-`
+  }`
 );

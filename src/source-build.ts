@@ -15,17 +15,19 @@ export const sourceBuild = (
   urlMap: string,
   userId?: string | number
 ): Source => {
-  const pageUrl = removeTrailingSlash(initUrl(urlMap || ""));
+  const pageUrl = removeTrailingSlash(initUrl(urlMap));
 
   let domain = "";
   let pathname = "";
 
-  try {
-    const urlObject = new URL(pageUrl);
-    domain = urlObject.hostname;
-    pathname = urlObject.pathname;
-  } catch (e) {
-    console.error(e);
+  if(pageUrl) {
+    try {
+      const urlObject = new URL(pageUrl);
+      domain = urlObject.hostname;
+      pathname = urlObject.pathname;
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   const cdnSourceStripped = stringFormater.formatCdn(pageUrl);
