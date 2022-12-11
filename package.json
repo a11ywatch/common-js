@@ -1,6 +1,6 @@
 {
   "name": "@a11ywatch/website-source-builder",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "get valid data properties for a11ywatch websites.",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,8 @@
   },
   "keywords": [
     "a11ywatch",
-    "a11ywatch-source-builder"
+    "a11ywatch-source-builder",
+    "transprent-oss-utils"
   ],
   "author": "Jeff Mendez",
   "license": "MIT",
