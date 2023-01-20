@@ -1,12 +1,12 @@
 const feats = [
   '50 domains',
-  'Wildcard subdomains and TLD monitoring',
+  'Wildcard subdomains and TLD',
+  'Sitemap extended domain coverage',
   'All pages checked daily with email status reports',
-  'Custom live CDN safeguard',
   'Analytics monitor',
   '10,000+ AI Models to validate resources (text OCR, images, and etc)',
   'PageSpeed Insights across all pages',
-  'Webhooks for web accessibility audits',
+  'Webhooks for audits',
   'Custom workflows and events',
   'Unlimited API request',
 ]
