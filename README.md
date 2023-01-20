@@ -13,9 +13,7 @@ import { sourceBuild } from "@a11ywatch/website-source-builder"
 const data = sourceBuild("https://a11ywatch.com");
 
 //  output {
-//       cdnJsPath: `a11ywatch.com/www-a11ywatch-com-ada-fix.js`,
-//       cdnMinJsPath: `a11ywatch.com/www-a11ywatch-com-ada-fix.min.js`,
-//       cdnSourceStripped: "www-a11ywatch-com-ada-fix",
+//       pathname: "/",
 //       domain: "a11ywatch.com",
 //       pageUrl: "https://a11ywatch.com",
 //       url: "https://a11ywatch.com"

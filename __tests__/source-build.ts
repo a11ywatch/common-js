@@ -7,9 +7,6 @@ describe("Source Builder", () => {
     const data = sourceBuild(httpUrl);
 
     expect(data).toEqual({
-      cdnJsPath: `${url}/www-drake-com-ada-fix.js`,
-      cdnMinJsPath: `${url}/www-drake-com-ada-fix.min.js`,
-      cdnSourceStripped: "www-drake-com-ada-fix",
       domain: url,
       pageUrl: httpUrl,
       pathname: "/",
@@ -20,9 +17,6 @@ describe("Source Builder", () => {
     const data = sourceBuild("");
 
     expect(data).toEqual({
-      cdnJsPath: "",
-      cdnMinJsPath: "",
-      cdnSourceStripped: "",
       domain: "",
       pageUrl: "",
       pathname: "",
