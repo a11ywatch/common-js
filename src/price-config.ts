@@ -1,14 +1,14 @@
 import {multiplier, BASE_L1, BASE_L2, BASE_L3, BASE_L4, BASE_L5, BASE_H1, BASE_H2, BASE_H3,BASE_H4,BASE_H5} from './get-usage-limits'
 
 const feats = [
-  '50 domains',
+  'Up to 50 sites included',
   'Wildcard subdomains and TLD',
   'Sitemap extended domain coverage',
   'All pages checked daily with email status reports',
   'Unlimited email reports',
   'Analytics monitor',
   '10,000+ AI Models to validate resources',
-  'PageSpeed Insights across all pages',
+  'Web Vitals across all pages',
   'Enterprise-grade infrastructure',
   'Unlimited API request',
 ]
