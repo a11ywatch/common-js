@@ -11,6 +11,7 @@ export const initUrl = (target: string, http?: boolean): string => {
   if (url.startsWith("://")) {
     url = `${tpt}${url}`;
   }
+  
   if (!httpEnabled) {
     url = `${tpt}://${url}`;
   }
