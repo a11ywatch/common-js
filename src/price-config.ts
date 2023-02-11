@@ -2,7 +2,7 @@ import {multiplier, BASE_L1, BASE_L2, BASE_L3, BASE_L4, BASE_L5, BASE_H1, BASE_H
 
 const feats = [
   'Up to 50 sites included',
-  'Wildcard subdomains and TLD',
+  'Wildcard subdomains and TLDs',
   'Sitemap extended domain coverage',
   '100% Data ownership',
   'All pages checked daily with email status reports',
