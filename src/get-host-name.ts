@@ -21,8 +21,8 @@ export function getHostName(url: string) {
     const { hostname } = new URL(targetUrl);
 
     return hostname;
-  } catch (e) {
-    console.error(e);
+  } catch (_e) {
+    // console.error(e);
     return "";
   }
 }

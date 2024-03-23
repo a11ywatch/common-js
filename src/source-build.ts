@@ -20,8 +20,8 @@ export const sourceBuild = (
       const urlObject = new URL(pageUrl);
       domain = urlObject.hostname;
       pathname = urlObject.pathname;
-    } catch (e) {
-      console.error(e);
+    } catch (_e) {
+      // console.error(e);
     }
   }
 
